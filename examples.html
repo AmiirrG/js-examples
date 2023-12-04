@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid lightslategray;
+        outline: none;
+      }
+
+      #demo li {
+        list-style-type: none;
+      }
+
+      table,
+      tr,
+      th,
+      tbody {
+        border: 1px solid lightblue;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <input type="text" id="fname" />
+  <button onclick="clickBtn()">click Me</button>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <ul id="demo"></ul>
+  <br /><br /><br /><br /><br />
+  <table>
+    <tr>
+      <th>row</th>
+      <th>name</th>
+    </tr>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <body>
+    <script>
+      let stds = ["ali", "reza", "akbar"];
+      let tbody = document.getElementById("tbody");
+      for (let i = 0; i < stds.length; i++) {
+        tbody.innerHTML += `<tr>
+          <td>${i + 1 + "."}</td>
+          <td>${stds[i]}</td>
+          </tr>`;
+      }
+
+      let tasks = ["task 1", "task 2", "task 3", "task 4"];
+      for (i = 0; i < tasks.length; i++) {
+        document.getElementById("demo").innerHTML += ` < li > $ {
+                tasks[i]
+            }
+            `;
+      }
+
+      function clickBtn() {
+        let fname = document.getElementById("fname").value;
+        alert(`
+            hello $ {
+                fname
+            }
+            `);
+      }
+      //hop
+
+      for (let i = 0; i <= 100; i++) {
+        if (i % 5 == 0) {
+          console.log("hop");
+        } else {
+          console.log(i);
+        }
+      }
+      //arguments
+
+      function sum() {
+        let num = arguments;
+        let sum = 0;
+        for (let i = 0; i < num.length; i += 1) {
+          sum = sum + num[i];
+        }
+        console.log(sum);
+      }
+      sum(12, 15, 10);
+      sum = function () {
+        let s = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          s = s + arguments[i];
+        }
+        console.log(s);
+      };
+      sum(12, 15);
+
+      function sum() {
+        let s = 0;
+        for (i = 0; i < arguments.length; i++) {
+          s += arguments[i];
+        }
+        console.log(s);
+      }
+      sum(1, 2, 3, 4, 5);
+    </script>
+  </body>
+</html>
